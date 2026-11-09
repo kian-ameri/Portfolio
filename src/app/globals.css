@@ -1,26 +1,54 @@
 @import "tailwindcss";
 
-:root {
+/* `dark:` utilities follow the data-theme attribute on <html>, not the OS setting. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* Colour tokens. Dark is the default; the theme toggle switches data-theme. */
+:root,
+[data-theme="dark"] {
+  --background: #000000;
+  --foreground: #f5f5f5;
+  --muted: #8a8a8a;
+  --subtle: #6e6e6e;
+  --faint: #5a5a5a;
+  --dimmed: #5e5e5e;
+  --line: #1c1c1c;
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0a0a0a;
+  --muted: #5c5c5c;
+  --subtle: #6e6e6e;
+  --faint: #9a9a9a;
+  --dimmed: #b4b4b4;
+  --line: #e6e6e6;
+  color-scheme: light;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-faint: var(--faint);
+  --color-dimmed: var(--dimmed);
+  --color-line: var(--line);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
+  --ease-out-soft: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --animate-fade-in: fade-in 520ms var(--ease-out-soft) both;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
