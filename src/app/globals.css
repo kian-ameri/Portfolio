@@ -13,6 +13,8 @@
   --faint: #5a5a5a;
   --dimmed: #5e5e5e;
   --line: #1c1c1c;
+  --label: #e8e8e8;
+  --label-active: #ffffff;
   color-scheme: dark;
 }
 
@@ -24,6 +26,8 @@
   --faint: #9a9a9a;
   --dimmed: #b4b4b4;
   --line: #e6e6e6;
+  --label: #1a1a1a;
+  --label-active: #000000;
   color-scheme: light;
 }
 
@@ -51,4 +55,70 @@
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+/* Home page directory. Hovering the list dims every label; the hovered row
+   stays bright and shows its arrow. (Kept here rather than in a CSS module
+   because the Tailwind loader in next.config.ts treats every .css file as global.) */
+@layer components {
+  .directory-row {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr) 24px;
+    align-items: baseline;
+    column-gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    outline: none;
+  }
+
+  .directory-number {
+    font-size: 12px;
+    color: var(--faint);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .directory-label {
+    justify-self: start;
+    font-size: clamp(26px, 6vw, 32px);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    color: var(--label);
+    transition: color 180ms ease;
+  }
+
+  .directory-arrow {
+    font-size: 16px;
+    text-align: right;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition:
+      opacity 180ms ease,
+      transform 240ms var(--ease-out-soft);
+  }
+
+  .directory:hover .directory-label {
+    color: var(--dimmed);
+  }
+
+  .directory:hover .directory-row:hover .directory-label,
+  .directory-row:focus-visible .directory-label {
+    color: var(--label-active);
+  }
+
+  .directory-row:hover .directory-arrow,
+  .directory-row:focus-visible .directory-arrow {
+    opacity: 1;
+    transform: none;
+  }
+
+  .directory-row:focus-visible .directory-number {
+    color: var(--foreground);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .directory-arrow {
+      transform: none;
+    }
+  }
 }
