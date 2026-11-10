@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 // Shown for any address that doesn't exist, styled like the home page.
 export default function NotFound() {
   return (
-    <main className="flex w-full max-w-[600px] flex-1 flex-col justify-center">
+    <main className="flex flex-1 flex-col justify-center">
       <p
         className="mb-8 max-w-[520px] text-[17px] leading-relaxed text-muted animate-fade-in motion-reduce:animate-none"
         style={{ animationDelay: "80ms" }}
