@@ -1,8 +1,8 @@
 # Portfolio
 
-Personal portfolio website: projects, résumé, and links.
+Simple personal website project.
 
-Built with [Next.js](https://nextjs.org), TypeScript, and Tailwind CSS. Deployed on [Vercel](https://vercel.com).
+Built with [Next.js](https://nextjs.org), TypeScript, and Tailwind CSS. 
 
 ## Running locally
 
