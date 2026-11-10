@@ -41,7 +41,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className="min-h-full font-sans">
-        <div className="mx-auto flex min-h-dvh w-full max-w-[720px] flex-col px-6">
+        <div className="mx-auto flex min-h-dvh w-full max-w-[1120px] flex-col px-6">
           <header className="flex min-h-18 flex-none items-center justify-between animate-fade-in motion-reduce:animate-none">
             <Link href="/" className="text-[15px] font-medium">
               {site.name}
