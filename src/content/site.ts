@@ -2,9 +2,7 @@
 
 export const site = {
   name: "Kian Ameri",
-  // TODO: replace [University] with your university.
-  intro:
-    "Student in electrical engineering, computer engineering and computer science at [University].",
+  intro: "Student interested in computer science and electrical engineering.",
 };
 
 export type DirectoryLink = {
