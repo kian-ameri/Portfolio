@@ -13,13 +13,11 @@ export type DirectoryLink = {
 };
 
 export const directory: DirectoryLink[] = [
-  { label: "About", href: "/about" },
-  // TODO: add your résumé as public/resume.pdf.
-  { label: "Résumé", href: "/resume.pdf", external: true },
-  { label: "Projects", href: "/projects" },
+  // Hidden until these pages and details exist. Uncomment to bring them back.
+  // { label: "About", href: "/about" },
+  // { label: "Résumé", href: "/resume.pdf", external: true }, // add public/resume.pdf first
+  // { label: "Projects", href: "/projects" },
   { label: "GitHub", href: "https://github.com/kian-ameri", external: true },
-  // TODO: replace with your LinkedIn profile URL.
-  { label: "LinkedIn", href: "https://www.linkedin.com/", external: true },
-  // TODO: replace with your email address.
-  { label: "Email", href: "mailto:you@example.com" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/kian-ameri", external: true },
+  // { label: "Email", href: "mailto:you@example.com" }, // replace with your address
 ];
