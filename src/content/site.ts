@@ -2,7 +2,7 @@
 
 export const site = {
   name: "Kian Ameri",
-  intro: "Student interested in computer science and electrical engineering.",
+  intro: "I dont know what to put here yet, but I will figure it out eventually.",
 };
 
 export type DirectoryLink = {
